@@ -23,6 +23,9 @@ int main(int argc, char *argv[]) {
 
     //Holds return value from forked process.
     int rc = fork();
+    
+    const char *processMessage = "Both child and parent should print this.\n";
+    write(file_descriptor, processMessage, strlen(processMessage));
 
     if (rc < 0) {
         //fork failed 
@@ -48,6 +51,8 @@ int main(int argc, char *argv[]) {
 }
 
 /*****************************************************
-Question 2: 
+Question 2: Yes, both the child and the parent can access the file descriptor.
 
+If they are both running concurrently, then the first process that will write depend on the 
+operating systems scheduling algorithm. Whenever I run it, the parent usually writes the message out first. 
 ******************************************************/

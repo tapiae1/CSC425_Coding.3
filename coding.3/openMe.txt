@@ -1,2 +1,4 @@
+Both child and parent should print this.
 Parent message
+Both child and parent should print this.
 Child message
