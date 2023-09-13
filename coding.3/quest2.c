@@ -1,9 +1,9 @@
-#include <stdio.h>;
-#include <stdlib.h>; 
-#include <unistd.h>;
-#include <string.h>; 
-#include <fcntl.h>;
-#include <sys/wait.h>; 
+#include <stdio.h>
+#include <stdlib.h> 
+#include <unistd.h>
+#include <string.h> 
+#include <fcntl.h>
+#include <sys/wait.h>
 
 int main(int argc, char *argv[]) {
     //File that will be opened.
@@ -13,11 +13,11 @@ int main(int argc, char *argv[]) {
     int file_descriptor; 
 
     //Open the file.
-    file_descriptor = open(file, O_CREAT | O_WRONLY | O_TRUNC);
+    file_descriptor = open(file, O_CREAT | O_RDWR | O_TRUNC, 0666);
 
     if (file_descriptor < 0) {
         // Fork Failed.
-        fprintf(stderr, "Failed to open file\n");
+        perror("Failed to open file");
         exit(1);
     }
 
@@ -43,6 +43,11 @@ int main(int argc, char *argv[]) {
         write(file_descriptor, parentMessage, strlen(parentMessage)); 
     }
 
-    Close(file_descriptor);
+    close(file_descriptor);
     return 0;
 }
+
+/*****************************************************
+Question 2: 
+
+******************************************************/
