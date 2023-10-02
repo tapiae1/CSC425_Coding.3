@@ -1,0 +1,18 @@
+/************************************************************************************************
+Eduardo Tapia
+
+Question 2: I have 7960 megabytes of mememory, and I have 6792
+megabytes of memory free. This matche my intuition because I know that I am on a 8GB ram computer.
+
+Question 4: When I ran my program, and then in a different window, ran the free tool, it 
+did not reflect any changes in memory. I assume this is because in my original code, I
+had an infinite loop.
+
+Question 6: When I ran ps auxw it gave me a list of long running processes, and I had a hard time trying to figure out what the processes were. What I had to do to find the process ID of my running process I created, I had to make the process print out its PID. Another way I could have found the Process ID for something like Safari, I had to go to the Activity Monitor that is built into the macOS system. 
+
+Question 7: When I run pmap I see different columns that say, address, kbytes, RSS, Dirty,
+Mode, and Mapping. This differs a little bit than what I would assume because in the book, the address space is a little bit more simple. In the book, the address space holds the 
+code, heap, and stack. When I open PMAP theres tons of different lines that represent multiple things alongside those 3.
+
+Question 8: I see the memory mapping of my running process. The output map doesn't really match my expectation beacause I thought that since I am running a program that allocates 
+memory, then I thought that it would be reflected in the memory mapping.
